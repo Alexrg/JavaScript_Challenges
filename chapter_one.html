@@ -30,6 +30,7 @@
 		const TAX_RATE = 0.08;
 
 		var amount = 99.99;
+		var bank_balance = 3000;
 
 		amount = amount * 2;
 		amount = amount + (amount * TAX_RATE);
@@ -40,6 +41,13 @@
 		number of decimals.
 		*/
 		console.log(amount.toFixed(2));
+
+		// Conditionals
+		if (amount < bank_balance){
+			console.log("I'll buy the products");
+		} else {
+			console.log("I can't afford the products");
+		}
 	</script>
 </body>
 </html>
