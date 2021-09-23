@@ -20,6 +20,26 @@
 		if ("99.99" == 99.99){
 			console.log("They are both loosely equally");
 		}
+
+		//Constants
+		/*
+		The const keyword allows you to declare a constant (a JavaScript variable with a
+		constant value). Constants are similar to let variables, except that the value
+		cannot be changed.
+		*/
+		const TAX_RATE = 0.08;
+
+		var amount = 99.99;
+
+		amount = amount * 2;
+		amount = amount + (amount * TAX_RATE);
+
+		console.log(amount);
+		/*
+		The toFixed() method converts a number into a string, rounding to a specified
+		number of decimals.
+		*/
+		console.log(amount.toFixed(2));
 	</script>
 </body>
 </html>
