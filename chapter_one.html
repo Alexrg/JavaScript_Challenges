@@ -48,6 +48,46 @@
 		} else {
 			console.log("I can't afford the products");
 		}
+
+		//Loops
+		/*
+		Write a program to calculate the total price of your phone purchase.  You  will 
+		keep  purchasing  phones  (hint:  loop!)  until  you run out of money in your
+		bank account. You’ll also buy accessories  for  each  phone  as  long  as  your 
+		purchase  amount  is  below your mental spending threshold.
+		*/
+		const TAX = .16;
+		const PHONE_PRICE = 1500;
+		const ACCESORY_PRICE = 20;
+		const SPENDING_TRESHOLD = 6000;
+		const BANK_ACCOUNT_BALANCE = prompt("Please enter your bank balance:");
+		var purshased_units = 0;
+		var purshased_accesories = 0;
+		var total_price = 0;
+
+		function calculateTotalPrice(price){
+			var total_price = price * (1 + TAX);
+
+			return total_price;
+		}
+
+		function formatPrice(price){
+			return "$"+price;
+		}
+		
+		do {
+			total_price += calculateTotalPrice(PHONE_PRICE);
+			purshased_units++;
+
+			if (total_price <= SPENDING_TRESHOLD){
+				total_price += calculateTotalPrice(ACCESORY_PRICE);
+				purshased_accesories++;
+			}
+		} while (total_price <= BANK_ACCOUNT_BALANCE);
+
+		console.log("Total phones bougth: " + purshased_units);
+		console.log("Total accesories bougth: " + purshased_accesories);
+		console.log("Total price: "+total_price);
 	</script>
 </body>
 </html>
